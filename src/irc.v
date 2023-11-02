@@ -51,9 +51,9 @@ pub fn (mut instance Interface) identify() ! {
 	instance.send_message('USER ${instance.nick} localhost ${instance.host.address} :${instance.nick}\r\n')!
 }
 
-pub fn (mut instance Interface) set_timeouts(read_to int, write_to int) {
-	instance.conn.set_read_timeout(read_to * time.second)
-	instance.conn.set_write_timeout(write_to * time.second)
+pub fn (mut instance Interface) set_timeouts(read_timeout int, write_timeout int) {
+	instance.conn.set_read_timeout(read_timeout * time.second)
+	instance.conn.set_write_timeout(write_timeout * time.second)
 }
 
 pub fn (mut instance Interface) send_message(message string) ! {
