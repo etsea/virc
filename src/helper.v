@@ -9,10 +9,10 @@ pub fn random_nickname() string {
 		'query', 'port', 'chip', 'circuit',
 		'proxy', 'stack', 'node', 'terminal'
 	]
-	index := rand.intn(base_names.len) or { 0 }
-	base_name := base_names[index]
+	first_index := rand.intn(base_names.len) or { 0 }
+	second_index := rand.intn(base_names.len) or { 1 }
+	name := '${base_names[first_index]}${base_names[second_index]}'
+	suffix := rand.u8().str()
 
-	number_suffix := rand.u16().str()
-
-	return '${base_name}_${number_suffix}'
+	return '${name}_${suffix}'
 }
