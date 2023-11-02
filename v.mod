@@ -3,5 +3,5 @@ Module {
 	description: 'V IRC Client'
 	version: '0.0.1'
 	license: 'MIT'
-	dependencies: [net, time, rand]
+	dependencies: [net, time, rand, cli]
 }
