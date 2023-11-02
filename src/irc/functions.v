@@ -3,20 +3,6 @@ module irc
 import net
 import time
 
-pub struct Server {
-pub:
-	address string
-	port string
-}
-
-pub struct Interface {
-pub mut:
-	conn net.TcpConn
-	nick string
-	pass string
-	host Server
-}
-
 fn (server Server) connect() !&net.TcpConn {
 	addresses := net.resolve_addrs_fuzzy(server.address, .tcp) or {
 		return error('Failed to resolve address: ${server.address}')
